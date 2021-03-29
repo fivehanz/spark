@@ -102,3 +102,30 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 
 # Ingestion
 
+## from files
+
+## from databases
+
+## advanced
+
+## from streaming data
+
+# Transformation
+
+## SQL
+
+## data
+
+## entire documents
+
+## UDF
+
+## Aggregating
+
+
+
+
+
+
+
+
