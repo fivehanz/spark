@@ -23,9 +23,9 @@ pyspark
 ```
 
 ## theory
-- Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publications.
+Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publications.
 
-## the big picture (ch 1)
+## the big picture 
 - Apache Spark 3 is certified to run on Java 11 [ref: book 1.5.1]
 - Supports APIs for Scala, R, Python, Java.
 
@@ -48,7 +48,7 @@ pyspark
 ### storage and APIs; the dataframe
   - essential to spark, dataframe. A data container and an API.
   - fig 1.7;
-  - API is extensible through user defined funstions (UDF), [ref ch 16]
+  - API is extensible through user defined functions (UDF), [ref ch 16]
 
 ## architecture and flow
 - the application is the driver. 
@@ -58,15 +58,15 @@ pyspark
   - ref fig 2.9
   - Connecting to a master: for every spark app, first operation is to connect to the spark master and get a spark "session."
     - master can be either local or remote cluster.
-  - Ingestion: ask spark to load the data
+  - **Ingestion**: ask spark to load the data
     - spark relies on the distrubuted worker nodes to do the work.
     - the allocated workers ingest at the same time.
     - the filesystem must be of either shared format or of a distrubuted filesystem.
     - each worker node assigns partitions in memory for ingestion and creates tasks which ingests the records from the filesystem/file.
     - data is ingested by all assigned worker nodes simultaneosly.
-  - Transformation: tasks within each node will perform the transformations
+  - **Transformation**: tasks within each node will perform the transformations
     - entire processing takes place within the workers.
-  - Saving or Publishing: the processed data is stored in the database or published from the partitions.
+  - **Saving or Publishing**: the processed data is stored in the database or published from the partitions.
     - if there is four partitions then saving to database will require four connections to the database. 
     - if there is 200,000 tasks then it causes 200,000 simultaneos connection to the database.
     - chapter 17: solution to the load issue.
@@ -74,23 +74,31 @@ pyspark
 ## role of the dataframe
 
 - dataframe: data structure similar to a table in the relational database world.
-  - immutable distrubuted collection of data.
-  - organized into columns.
-  - a df is an RDD with a schema.
-  - use dataframe over an RDD when performance is critical.
+  - **immutable** distrubuted collection of data.
+  - organized into **columns**.
+  - a dataframe is an RDD with a schema.
+  - use dataframe over an RDD when **performance is critical**.
 - transformations: operations performed on data.
 - resilient distrubuted dataset (RDD): dataframe is built on top of the RDD concept. RDD was the first generation of storage in Spark.
-- APIs across Spark libs are unified under the dataframe API.
+- **APIs across Spark libs are unified under the dataframe API**.
 
-### using df
-  [pyspark.sql API](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql.html)
+### using dataframe in python
+[pyspark.sql API](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql.html)
 
 ### essential role of dataframe
   - figure 3.1
 
 ### data immutability
-  - Spark stores the initial state of the data, in an immutable way, and then keeps the recipe (a list of transformations.)
-  - The data is kept in sync with the nodes, and shares the transformations when it is executed at the end. 
+  - **Spark stores the initial state of the data, in an immutable way, and then keeps the recipe (a list of transformations.)**
+  - The access to data is kept in sync with the nodes.
+  - Spark stores only the steps of the transformation.
   - This becomes intuitive when the nodes are distrubuted.
+  - fig 3.4
 
+### Catalyst 
+
+- Spark builds the list of transformations as a directed acyclic graph (DAG)
+- DAG is optimized by Catalyst, built-in optimizer.
+
+## Ingestion
 
