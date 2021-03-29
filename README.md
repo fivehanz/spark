@@ -1,13 +1,13 @@
 # Apache Spark
 
-### Download Spark
+## Download Spark
 Local build:
 
 Date: March 2021
 
 Spark release 3.1.1; package type "prebuilt for Hadoop 2.7"; openjdk 15.0.2; python 3.9.2 and pyspark;
 
-### PySpark Shell
+## PySpark Shell
 
 To start PySpark on Linux/OS X
 
@@ -22,7 +22,7 @@ pip install pyspark
 pyspark
 ```
 
-## theory
+# theory
 Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publications.
 
 ## the big picture 
@@ -100,5 +100,5 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 - Spark builds the list of transformations as a directed acyclic graph (DAG)
 - DAG is optimized by Catalyst, built-in optimizer.
 
-## Ingestion
+# Ingestion
 
