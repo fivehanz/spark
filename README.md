@@ -1,8 +1,11 @@
 # Apache Spark
 
 ### Download Spark
+Local build:
 
-Date: March 2021; spark release 3.1.1; package type "prebuilt for Hadoop 2.7"; openjdk 15.0.2; python 3.9.2;
+Date: March 2021
+
+Spark release 3.1.1; package type "prebuilt for Hadoop 2.7"; openjdk 15.0.2; python 3.9.2 and pyspark;
 
 ### PySpark Shell
 
@@ -19,20 +22,21 @@ pip install pyspark
 pyspark
 ```
 
-# theory
+## theory
+- Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publications.
 
 ## the big picture (ch 1)
-- Apache Spark 3 is certified on Java 11 [ref: book 1.5.1]
+- Apache Spark 3 is certified to run on Java 11 [ref: book 1.5.1]
 - Supports APIs for Scala, R, Python, Java.
 
 ### what is it and what is it used as
   - spark can be imagined as an analytics operating system.
-  - takes care of distrubuted nodes under it.
-  - provides standardised spark sql for rdbms.
-  - can be utilized with only the understandings of the tool rather than the workings, much like an operating system.
+  - automatically manages the distrubuted nodes under it.
+  - provides standardised spark SQL for rdbms.
+  - to utilize spark, it is not necessary to understand the workings under the hood.
   - refer: figure 1.3;
   - excels in big data scenarios: data eng, data sciences, etc.
-    - Ingestion (raw data), Improvement of data quality (pure data), Transformation (rich data), publication. fig 1.5
+  - Basic steps: Ingestion (raw data), Improvement of data quality (pure data), Transformation (rich data), publication. fig 1.5
 
 ### four pillars of spark
   - ref: fig 1.4
@@ -44,23 +48,24 @@ pyspark
 ### storage and APIs; the dataframe
   - essential to spark, dataframe. A data container and an API.
   - fig 1.7;
-  - more in ch 3.
-  - API is extensible through UDF, ch 16.
+  - API is extensible through user defined funstions (UDF), [ref ch 16]
 
 ## architecture and flow
-- app is the driver. data can be processed within the master remotely.
+- the application is the driver. 
+- data can be processed and manipulated within the master, even remotely.
 
 ### typical flow of data in an app
   - ref fig 2.9
   - Connecting to a master: for every spark app, first operation is to connect to the spark master and get a spark "session."
     - master can be either local or remote cluster.
   - Ingestion: ask spark to load the data
-    - spark relies on the distrubuted worker nodes to do work.
+    - spark relies on the distrubuted worker nodes to do the work.
     - the allocated workers ingest at the same time.
-    - the filesystem requires to be either shared or a distrubuted filesystem.
-    - each worker node assigns partitions in memory for ingestion and creates tasks which ingests the records from the file.
+    - the filesystem must be of either shared format or of a distrubuted filesystem.
+    - each worker node assigns partitions in memory for ingestion and creates tasks which ingests the records from the filesystem/file.
     - data is ingested by all assigned worker nodes simultaneosly.
-  - Transformation: tasks within each node will perform the transformation; entire processing takes place in the workers.
+  - Transformation: tasks within each node will perform the transformations
+    - entire processing takes place within the workers.
   - Saving or Publishing: the processed data is stored in the database or published from the partitions.
     - if there is four partitions then saving to database will require four connections to the database. 
     - if there is 200,000 tasks then it causes 200,000 simultaneos connection to the database.
@@ -68,7 +73,7 @@ pyspark
 
 ## role of the dataframe
 
-- dataframe: data structure similar to a table in relational database world.
+- dataframe: data structure similar to a table in the relational database world.
   - immutable distrubuted collection of data.
   - organized into columns.
   - a df is an RDD with a schema.
