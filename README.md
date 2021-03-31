@@ -121,8 +121,7 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
   - WIP
 
 ## from streaming data
-  - 
-
+  - WIP
 
 # Transformation
 
