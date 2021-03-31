@@ -103,12 +103,26 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 # Ingestion
 
 ## from files
+  - regex can be used to specify the path
+  - to parse CSV files, spark provides a rich set of options to tune the parser.
+  - Spark can ingest both one-line and multiline JSON
+  - To ingest XML, a plugin provided by Databricks is required.
+  - Avro, ORC and Parquet are well supported by Spark. 
+  - The pattern for ingesting is fairly similar: specify the format and read.
 
 ## from databases
+  - Spark requires JDBC drivers.
+  - Spark comes with support for IBM Db2, Apache Derby, MySQL, Microsoft SQL Server, Oracle, PostgreSQL and Terradata Database.
+  - Joins can be performed at database level prior to ingestion, but can also do joins in Spark.
+  - Ingesting data from Elasticsearch follows same principle as any other ingestion.
+  - Elasticsearch contains JSON documents, which are ingested as is in Spark.
 
 ## advanced
+  - WIP
 
 ## from streaming data
+  - 
+
 
 # Transformation
 
