@@ -41,7 +41,7 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 ### four pillars of spark
   - ref: fig 1.4
   - Spark SQL: data operations, offers API and SQL
-  - Spark streaming (uses RDD), Structured streaming(uses Spark SQL and dataframe): to analyze streaming data.
+  - Spark streaming (called DStream, relies on RDD), Structured streaming(uses Spark SQL and dataframe): to analyze streaming data.
   - Spark MLlib: for ML, DL
   - Spark GraphX: to manipulate graph-based data structures within spark.
 
@@ -120,8 +120,9 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 ## advanced
   - WIP
 
-## from streaming data
-  - WIP
+## from streaming data (using Structured Streaming)
+  - Starting a Spark session is the same whether in batch or streaming mode.
+  - You define a stream on a dataframe by using the ```readStream()``` method followed by the start() method. You can specify ingestion format by using format(), and options by using option().
 
 # Transformation
 
