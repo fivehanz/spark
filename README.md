@@ -130,15 +130,23 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 
 # Transformation
 
+The core purpose of Spark.
+
 ## SQL
 
-## data
 
-## entire documents
+## transforming data
 
-## UDF
 
-## Aggregating
+## transforming entire documents
+  
+
+## extending Spark using UDF
+  - WIP
+
+## Aggregations
+  - WIP
+
 
 
 
