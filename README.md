@@ -59,24 +59,29 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 - Supports APIs for Scala, R, Python, Java.
 
 ### what is it and what is it used as
+
+![fig13](images/fig13.png)
+
   - spark can be imagined as an analytics operating system.
   - automatically manages the distrubuted nodes under it.
   - provides standardised spark SQL for rdbms.
   - to utilize spark, it is not necessary to understand the workings under the hood.
-  - refer: figure 1.3;
   - excels in big data scenarios: data eng, data sciences, etc.
   - Basic steps: Ingestion (raw data), Improvement of data quality (pure data), Transformation (rich data), publication. fig 1.5
 
 ### four pillars of spark
-  - ref: fig 1.4
+![fig14](images/fig14.png)
+
   - Spark SQL: data operations, offers API and SQL
   - Spark streaming (called DStream, relies on RDD), Structured streaming(uses Spark SQL and dataframe): to analyze streaming data.
   - Spark MLlib: for ML, DL
   - Spark GraphX: to manipulate graph-based data structures within spark.
 
 ### storage and APIs; the dataframe
+
+![fig17](images/fig17.png)
+
   - essential to spark, dataframe. A data container and an API.
-  - fig 1.7;
   - API is extensible through user defined functions (UDF), [ref ch 16]
 
 ## architecture and flow
@@ -84,7 +89,8 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 - data can be processed and manipulated within the master, even remotely.
 
 ### typical flow of data in an app
-  - ref fig 2.9
+![fig29](images/fig29.png)
+
   - Connecting to a master: for every spark app, first operation is to connect to the spark master and get a spark "session."
     - master can be either local or remote cluster.
   - **Ingestion**: ask spark to load the data
@@ -115,14 +121,16 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 [pyspark.sql API](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql.html)
 
 ### essential role of dataframe
-  - figure 3.1
+![fig31](images/fig31.png)
 
 ### data immutability
+
+![fig34](images/fig34.png)
+
   - **Spark stores the initial state of the data, in an immutable way, and then keeps the recipe (a list of transformations.)**
   - The access to data is kept in sync with the nodes.
   - Spark stores only the steps of the transformation.
   - This becomes intuitive when the nodes are distrubuted.
-  - fig 3.4
 
 ### Catalyst 
 
