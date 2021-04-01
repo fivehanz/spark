@@ -67,7 +67,11 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
   - provides standardised spark SQL for rdbms.
   - to utilize spark, it is not necessary to understand the workings under the hood.
   - excels in big data scenarios: data eng, data sciences, etc.
-  - Basic steps: Ingestion (raw data), Improvement of data quality (pure data), Transformation (rich data), publication. fig 1.5
+  - Basic steps: (fig 1.5)
+    - Ingestion (raw data)
+    - Improvement of data quality (pure data)
+    - Transformation (rich data), 
+    - Publication. 
 
 ### four pillars of spark
 ![fig14](images/fig14.png)
@@ -161,8 +165,8 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
   - Starting a Spark session is the same whether in batch or streaming mode.
   - You define a stream on a dataframe by using the ```readStream()``` method followed by the ```start()``` method. 
   - You can specify ingestion format by using ```format()```, and options by using ```option()```.
-
-  - Example Code: WIP
+### Example Code
+  - WIP
 
 
 # Transformation
@@ -186,6 +190,7 @@ The core purpose of Apache Spark.
   - Application execution: run the app.
   - Data review
 
+### Code Examples
   - WIP
 
 ## transforming entire documents
