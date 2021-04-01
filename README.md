@@ -14,7 +14,7 @@
     * [using dataframe in python](#using-dataframe-in-python)
     * [essential role of dataframe](#essential-role-of-dataframe)
     * [data immutability](#data-immutability)
-    * [Catalyst ](#catalyst-)
+    * [Catalyst ](#catalyst)
 * [Ingestion](#ingestion)
   * [from files](#from-files)
   * [from databases](#from-databases)
@@ -23,6 +23,7 @@
 * [Transformation](#transformation)
   * [SQL](#sql)
   * [transforming data](#transforming-data)
+    * [five steps](#five-steps)
   * [transforming entire documents](#transforming-entire-documents)
   * [extending Spark using UDF](#extending-spark-using-udf)
   * [Aggregations](#aggregations)
@@ -158,16 +159,29 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 
 # Transformation
 
-The core purpose of Spark.
+The core purpose of Apache Spark.
 
 ## SQL
-
+  - Spark supports Structured Query Language (SQL) as a query language to interrogate data.
+  - Spark’s SQL is based on Apache Hive’s SQL (HiveQL), which is based on SQL-92.
+  - You can mix API and SQL in your application.
+  - Data is manipulated through views on top of a dataframe.
+  - Views can be local to the session, or global/shared among sessions in the same application. Views are never shared between applications.
+  - Because data is immutable, you cannot drop or modify records; you will have to re-create a new dataset. However, you can build a new dataframe based on a filtered dataframe.
 
 ## transforming data
 
+### five steps
+  - Data discovery: observing and understanding the structure of the data.
+  - Data mapping
+  - Application engineering/writing: design and develop the app. 
+  - Application execution: run the app.
+  - Data review
+
+  - WIP
 
 ## transforming entire documents
-  
+  - WIP  
 
 ## extending Spark using UDF
   - WIP
