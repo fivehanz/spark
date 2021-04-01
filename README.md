@@ -122,7 +122,10 @@ Reference: Spark in Action Second Edition, Jean-Georges Perrin, Manning Publicat
 
 ## from streaming data (using Structured Streaming)
   - Starting a Spark session is the same whether in batch or streaming mode.
-  - You define a stream on a dataframe by using the ```readStream()``` method followed by the start() method. You can specify ingestion format by using format(), and options by using option().
+  - You define a stream on a dataframe by using the ```readStream()``` method followed by the ```start()``` method. You can specify ingestion format by using ```format()```, and options by using ```option()```.
+
+  - Example Code: WIP
+
 
 # Transformation
 
