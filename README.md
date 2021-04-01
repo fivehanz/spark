@@ -1,5 +1,34 @@
 # Apache Spark
 
+* [Apache Spark](#apache-spark)
+  * [Download Spark](#download-spark)
+  * [PySpark Shell](#pyspark-shell)
+* [theory](#theory)
+  * [the big picture ](#the-big-picture-)
+    * [what is it and what is it used as](#what-is-it-and-what-is-it-used-as)
+    * [four pillars of spark](#four-pillars-of-spark)
+    * [storage and APIs; the dataframe](#storage-and-apis;-the-dataframe)
+  * [architecture and flow](#architecture-and-flow)
+    * [typical flow of data in an app](#typical-flow-of-data-in-an-app)
+  * [role of the dataframe](#role-of-the-dataframe)
+    * [using dataframe in python](#using-dataframe-in-python)
+    * [essential role of dataframe](#essential-role-of-dataframe)
+    * [data immutability](#data-immutability)
+    * [Catalyst ](#catalyst-)
+* [Ingestion](#ingestion)
+  * [from files](#from-files)
+  * [from databases](#from-databases)
+  * [advanced](#advanced)
+(#from-streaming-data-(using-structured-streaming))
+  * from streaming data (using Structured Streaming)
+* [Transformation](#transformation)
+  * [SQL](#sql)
+  * [transforming data](#transforming-data)
+  * [transforming entire documents](#transforming-entire-documents)
+  * [extending Spark using UDF](#extending-spark-using-udf)
+  * [Aggregations](#aggregations)
+
+
 ## Download Spark
 Local build:
 
